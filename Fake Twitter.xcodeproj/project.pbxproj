@@ -9,23 +9,31 @@
 /* Begin PBXBuildFile section */
 		0C5D475B282A917A00A6CDA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5D475A282A917A00A6CDA1 /* AppDelegate.swift */; };
 		0C5D475D282A917A00A6CDA1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5D475C282A917A00A6CDA1 /* SceneDelegate.swift */; };
-		0C5D475F282A917A00A6CDA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5D475E282A917A00A6CDA1 /* ViewController.swift */; };
+		0C5D475F282A917A00A6CDA1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5D475E282A917A00A6CDA1 /* HomeViewController.swift */; };
 		0C5D4762282A917A00A6CDA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C5D4760282A917A00A6CDA1 /* Main.storyboard */; };
 		0C5D4765282A917A00A6CDA1 /* Fake_Twitter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C5D4763282A917A00A6CDA1 /* Fake_Twitter.xcdatamodeld */; };
 		0C5D4767282A917C00A6CDA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C5D4766282A917C00A6CDA1 /* Assets.xcassets */; };
 		0C5D476A282A917C00A6CDA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C5D4768282A917C00A6CDA1 /* LaunchScreen.storyboard */; };
+		0C5D4772282A947E00A6CDA1 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5D4771282A947E00A6CDA1 /* CustomTableViewCell.swift */; };
+		0C5D4774282A9C2000A6CDA1 /* AddTweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5D4773282A9C2000A6CDA1 /* AddTweetsViewController.swift */; };
+		0C5D4776282A9CDC00A6CDA1 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5D4775282A9CDC00A6CDA1 /* Tweet.swift */; };
+		0C5D4778282AA16100A6CDA1 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5D4777282AA16100A6CDA1 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0C5D4757282A917A00A6CDA1 /* Fake Twitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fake Twitter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C5D475A282A917A00A6CDA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C5D475C282A917A00A6CDA1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0C5D475E282A917A00A6CDA1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0C5D475E282A917A00A6CDA1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0C5D4761282A917A00A6CDA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0C5D4764282A917A00A6CDA1 /* Fake_Twitter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Fake_Twitter.xcdatamodel; sourceTree = "<group>"; };
 		0C5D4766282A917C00A6CDA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C5D4769282A917C00A6CDA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C5D476B282A917C00A6CDA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C5D4771282A947E00A6CDA1 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		0C5D4773282A9C2000A6CDA1 /* AddTweetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTweetsViewController.swift; sourceTree = "<group>"; };
+		0C5D4775282A9CDC00A6CDA1 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		0C5D4777282AA16100A6CDA1 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +54,8 @@
 				0C5D4758282A917A00A6CDA1 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
+			wrapsLines = 0;
 		};
 		0C5D4758282A917A00A6CDA1 /* Products */ = {
 			isa = PBXGroup;
@@ -58,14 +68,18 @@
 		0C5D4759282A917A00A6CDA1 /* Fake Twitter */ = {
 			isa = PBXGroup;
 			children = (
-				0C5D475A282A917A00A6CDA1 /* AppDelegate.swift */,
-				0C5D475C282A917A00A6CDA1 /* SceneDelegate.swift */,
-				0C5D475E282A917A00A6CDA1 /* ViewController.swift */,
-				0C5D4760282A917A00A6CDA1 /* Main.storyboard */,
-				0C5D4766282A917C00A6CDA1 /* Assets.xcassets */,
-				0C5D4768282A917C00A6CDA1 /* LaunchScreen.storyboard */,
 				0C5D476B282A917C00A6CDA1 /* Info.plist */,
+				0C5D475A282A917A00A6CDA1 /* AppDelegate.swift */,
+				0C5D475E282A917A00A6CDA1 /* HomeViewController.swift */,
+				0C5D4777282AA16100A6CDA1 /* Helper.swift */,
+				0C5D4775282A9CDC00A6CDA1 /* Tweet.swift */,
+				0C5D4771282A947E00A6CDA1 /* CustomTableViewCell.swift */,
+				0C5D475C282A917A00A6CDA1 /* SceneDelegate.swift */,
+				0C5D4766282A917C00A6CDA1 /* Assets.xcassets */,
 				0C5D4763282A917A00A6CDA1 /* Fake_Twitter.xcdatamodeld */,
+				0C5D4768282A917C00A6CDA1 /* LaunchScreen.storyboard */,
+				0C5D4760282A917A00A6CDA1 /* Main.storyboard */,
+				0C5D4773282A9C2000A6CDA1 /* AddTweetsViewController.swift */,
 			);
 			path = "Fake Twitter";
 			sourceTree = "<group>";
@@ -141,10 +155,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C5D475F282A917A00A6CDA1 /* ViewController.swift in Sources */,
+				0C5D4774282A9C2000A6CDA1 /* AddTweetsViewController.swift in Sources */,
+				0C5D475F282A917A00A6CDA1 /* HomeViewController.swift in Sources */,
+				0C5D4772282A947E00A6CDA1 /* CustomTableViewCell.swift in Sources */,
+				0C5D4776282A9CDC00A6CDA1 /* Tweet.swift in Sources */,
 				0C5D475B282A917A00A6CDA1 /* AppDelegate.swift in Sources */,
 				0C5D4765282A917A00A6CDA1 /* Fake_Twitter.xcdatamodeld in Sources */,
 				0C5D475D282A917A00A6CDA1 /* SceneDelegate.swift in Sources */,
+				0C5D4778282AA16100A6CDA1 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
