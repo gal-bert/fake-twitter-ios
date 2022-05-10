@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddTweetsViewController: UIViewController {
+class AddTweetViewController: UIViewController {
 
     @IBOutlet weak var authorTextField: UITextField!
     @IBOutlet weak var contentTextView: UITextView!
@@ -37,8 +37,6 @@ class AddTweetsViewController: UIViewController {
 			"author": author,
 			"content": content
 		])
-
-		
 		
 		URLSession.shared.dataTask(with: request){ (data, response, error) in
 			Helper.getNetworkResponse(data: data, response: response, error: error)
@@ -53,7 +51,6 @@ class AddTweetsViewController: UIViewController {
 					self.present(Helper.pushAlert(title: "Oops!", message: "Something is wrong with the server, please try again later!"), animated: true)
 				}
 			}
-				
 			
 		}.resume()
         
