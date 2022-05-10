@@ -10,7 +10,7 @@ import UIKit
 
 class Helper {
 	
-	static let BASE_URL = "http://127.0.0.1:8000/api/tweets"
+	static let BASE_URL = "https://fake-twitter.gregorius.id/api/tweets"
 	
 	static func pushAlert(title:String, message:String) -> UIAlertController {
 		let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
