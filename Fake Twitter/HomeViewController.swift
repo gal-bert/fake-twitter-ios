@@ -25,11 +25,12 @@ class HomeViewController: UIViewController {
 	}
 	
 	func fetchFromAPI() -> Void {
+		tweets.removeAll()
+
 		let url = URL(string: Helper.BASE_URL)!
 		var request = URLRequest(url: url)
 		request.httpMethod = "GET"
 		
-		tweets.removeAll()
 		URLSession.shared.dataTask(with: request){ (data, response, error) in
 			let json = try! JSONSerialization.jsonObject(with: data!) as! [[String:Any]]
 			for result in json {
