@@ -45,8 +45,12 @@ class HomeViewController: UIViewController {
 			}
 			
 		}.resume()
-		tableView.reloadData()
 	}
+    
+    @IBAction func refresh(_ sender: Any) {
+        fetchFromAPI()
+    }
+    
     
     @IBAction func unwindToHome(_ unwindSegue: UIStoryboardSegue) {
         let sourceViewController = unwindSegue.source

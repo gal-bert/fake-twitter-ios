@@ -18,8 +18,8 @@ class EditTweetViewController: UIViewController {
         super.viewDidLoad()
         
         authorTextField.text = tweet?.author
-        
         contentTextView.text = tweet?.content
+		
 		contentTextView.layer.borderColor = UIColor.gray.cgColor
 		contentTextView.layer.borderWidth = 1.0
 		contentTextView.layer.cornerRadius = 5.0

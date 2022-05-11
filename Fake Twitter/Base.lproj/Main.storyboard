@@ -68,6 +68,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Fake Twitter" id="MtI-S8-g8l">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.clockwise" catalog="system" id="jGq-yZ-byN">
+                            <connections>
+                                <action selector="refresh:" destination="BYZ-38-t0r" id="nRq-jG-jdF"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="J9S-cd-coz">
                             <connections>
                                 <segue destination="1fn-I1-yvC" kind="show" id="6gH-VO-sJy"/>
@@ -257,6 +262,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

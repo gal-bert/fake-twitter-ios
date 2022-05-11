@@ -32,7 +32,7 @@ class AddTweetViewController: UIViewController {
 		request.allHTTPHeaderFields = [
 			"Content-Type" : "application/json"
 		]
-		
+
 		request.httpBody = try! JSONSerialization.data(withJSONObject: [
 			"author": author,
 			"content": content
