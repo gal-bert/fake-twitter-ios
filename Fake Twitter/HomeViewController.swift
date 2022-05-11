@@ -25,26 +25,10 @@ class HomeViewController: UIViewController {
 	}
 	
 	func fetchFromAPI() -> Void {
-		let url = URL(string: Helper.BASE_URL)!
-		var request = URLRequest(url: url)
-		request.httpMethod = "GET"
-		
 		tweets.removeAll()
-		URLSession.shared.dataTask(with: request){ (data, response, error) in
-			let json = try! JSONSerialization.jsonObject(with: data!) as! [[String:Any]]
-			for result in json {
-				let id = result["id"] as! Int
-				let author = result["author"] as! String
-				let content = result["content"] as! String
-				let tweet = Tweet(id: id, author: author, content: content)
-				self.tweets.append(tweet)
-			}
-			
-			DispatchQueue.main.async {
-				self.tableView.reloadData()
-			}
-			
-		}.resume()
+		
+		// TODO: Create GET Method to API (Get all Tweet)
+		
 	}
     
     @IBAction func refresh(_ sender: Any) {
@@ -86,17 +70,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 		if editingStyle == .delete {
 
-			let id = tweets[indexPath.row].id
-			let url = URL(string: "\(Helper.BASE_URL)/\(id)")!
-			var request = URLRequest(url: url)
-			request.httpMethod = "DELETE"
-			
-			URLSession.shared.dataTask(with: request) { data, response, error in
-				Helper.getNetworkResponse(data: data, response: response, error: error)
-				DispatchQueue.main.async {
-					self.fetchFromAPI()
-				}
-			}.resume()
+			// TODO: Create DELETE Method to API (Delete Tweet)
 			
 		}
 	}

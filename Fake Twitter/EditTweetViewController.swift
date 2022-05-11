@@ -31,35 +31,7 @@ class EditTweetViewController: UIViewController {
         
         let id = tweet?.id
 		
-		let url = URL(string: "\(Helper.BASE_URL)/\(id!)")!
-		var request = URLRequest(url: url)
-		request.httpMethod = "PUT"
-		
-		request.allHTTPHeaderFields = [
-			"Content-Type" : "application/json"
-		]
-		
-		request.httpBody = try! JSONSerialization.data(withJSONObject: [
-			"author": author,
-			"content": content
-		])
-		
-		URLSession.shared.dataTask(with: request) { data, response, error in
-			Helper.getNetworkResponse(data: data, response: response, error: error)
-			
-			let httpResponse = response as? HTTPURLResponse
-			
-			if httpResponse?.statusCode == 200 {
-				DispatchQueue.main.async {
-					self.performSegue(withIdentifier: "unwindToHomeSegue", sender: self)
-				}
-			} else {
-				DispatchQueue.main.async {
-					self.present(Helper.pushAlert(title: "Oops!", message: "Something is wrong with the server, please try again later!"), animated: true)
-				}
-			}
-			
-		}.resume()
+		// TODO: Create PUT Method to API (Edit Tweet)
 		
     }
     
