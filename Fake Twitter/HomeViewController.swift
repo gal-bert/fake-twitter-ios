@@ -29,6 +29,16 @@ class HomeViewController: UIViewController {
 		
 		// TODO: Create GET Method to API (Get all Tweet)
 		
+		// Define the URL
+		// Create the HTTP request
+		// Define the request method (GET / POST / PUT / DELETE)
+		// Execute the request
+		
+		/// Get the JSON Object from the API and cast as array of [String:Any]
+		/// Loop through the array and put into a model
+		/// Append object to array
+		/// Reload the tableview
+		
 	}
     
     @IBAction func refresh(_ sender: Any) {
@@ -69,8 +79,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 		if editingStyle == .delete {
+			
+			let id = tweets[indexPath.row].id
 
 			// TODO: Create DELETE Method to API (Delete Tweet)
+			
+			// Define the URL
+			// Create the HTTP request
+			// Define the request method (GET / POST / PUT / DELETE)
+			// Execute the request
+			
+			/// Reload the tableview after deletion
 			
 		}
 	}

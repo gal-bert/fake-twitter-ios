@@ -27,6 +27,13 @@ class AddTweetViewController: UIViewController {
        
 		// TODO: Create POST Method to API (Create new Tweet)
 		
+		// Define the URL
+		// Create the HTTP request
+		// Define the request method (GET / POST / PUT / DELETE)
+		// Define the HTTP Header (Only for POST and PUT)
+		// Define the HTTP Body (What to POST / PUT)
+		// Execute the request
+		
         
     }
     
