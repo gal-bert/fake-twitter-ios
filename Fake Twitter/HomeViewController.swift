@@ -89,7 +89,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 			// Define the request method (GET / POST / PUT / DELETE)
 			// Execute the request
 			
-			/// Reload the tableview after deletion
+			/// Refetch the data and Reload the tableview after deletion - fetchFromAPI()
 			
 		}
 	}
