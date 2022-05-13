@@ -40,6 +40,24 @@ class EditTweetViewController: UIViewController {
 		// Define the HTTP Body (What to POST / PUT)
 		// Execute the request
 		
+		let url = URL(string: "\(Helper.BASE_URL)/\(id!)")
+		var request = URLRequest(url: url!)
+		request.httpMethod = "PUT"
+		
+		request.allHTTPHeaderFields = ["Content-Type" : "application/json"]
+		
+		request.httpBody = try! JSONSerialization.data(withJSONObject: [
+			"author" : author,
+			"content" : content
+		])
+		
+		URLSession.shared.dataTask(with: request) { data, response, error in
+			Helper.getNetworkResponse(data: data, response: response, error: error)
+			DispatchQueue.main.async {
+				self.performSegue(withIdentifier: "unwindToHomeSegue", sender: self)
+			}
+		}.resume()
+		
     }
     
 }

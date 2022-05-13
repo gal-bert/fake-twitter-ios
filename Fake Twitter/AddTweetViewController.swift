@@ -34,6 +34,23 @@ class AddTweetViewController: UIViewController {
 		// Define the HTTP Body (What to POST / PUT)
 		// Execute the request
 		
+		let url = URL(string: Helper.BASE_URL)
+		var request = URLRequest(url: url!)
+		request.httpMethod = "POST"
+		
+		request.allHTTPHeaderFields = ["Content-Type" : "application/json"]
+		
+		request.httpBody = try! JSONSerialization.data(withJSONObject: [
+			"author" : author,
+			"content" : content
+		])
+		
+		URLSession.shared.dataTask(with: request) { data, response, error in
+			DispatchQueue.main.async {
+				self.performSegue(withIdentifier: "unwindToHomeSegue", sender: self)
+			}
+		}.resume()
+		
         
     }
     

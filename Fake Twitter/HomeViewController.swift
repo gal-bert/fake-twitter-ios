@@ -33,6 +33,28 @@ class HomeViewController: UIViewController {
 		// Create the HTTP request
 		// Define the request method (GET / POST / PUT / DELETE)
 		
+		let url = URL(string: Helper.BASE_URL)
+		var request = URLRequest(url: url!)
+		request.httpMethod = "GET"
+		
+		URLSession.shared.dataTask(with: request) { data, response, error in
+			let json = try! JSONSerialization.jsonObject(with: data!) as! [[String:Any]]
+			
+			for result in json {
+				let tweet = Tweet(
+					id: result["id"] as! Int,
+					author: result["author"] as! String,
+					content: result["content"] as! String
+				)
+				self.tweets.append(tweet)
+			}
+			
+			DispatchQueue.main.async {
+				self.tableView.reloadData()
+			}
+			
+		}.resume()
+		
 		// Execute the request
 		/// Get the JSON Object from the API and cast as array of [String:Any]
 		/// Loop through the array and put into a model
@@ -90,6 +112,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 			
 			// Execute the request
 			/// Refetch the data and Reload the tableview after deletion - fetchFromAPI()
+			
+			let url = URL(string: "\(Helper.BASE_URL)/\(id)")
+			var request = URLRequest(url: url!)
+			request.httpMethod = "DELETE"
+			
+			URLSession.shared.dataTask(with: request) { data, response, error in
+				DispatchQueue.main.async {
+					self.fetchFromAPI()
+				}
+			}.resume()
+			
 			
 		}
 	}
